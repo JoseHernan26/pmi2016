@@ -64,9 +64,9 @@ n.confirmacion=0;
 
 int busca_inscripto (pila p, int dni) {
 pila aux;
-while (!isempty(p) && copiar(p)!= dni){    //PREGUNTAR ME DEVUELVE UNA ESTRUCTURA, QUIERO SABER EL DNI//
+while (!isempty(p) && copiar(p).dni!= dni){    //PREGUNTAR ME DEVUELVE UNA ESTRUCTURA, QUIERO SABER EL DNI//
  aux=p;
- suppress(&p);
+ suppress(&aux);
 }
 if (!isempty(p)){
 printf("EL DNI: %d SE ENCUENTRA INSCRIPTO \n", dni);
@@ -74,9 +74,10 @@ return 1;}
 else{
 printf("EL DNI: %d NO ESTA INSCRIPTO\n",dni );
 return 0;}
-while(!isempty(aux)){
-    insertar(&aux,p);//ERROR EN EL PASAJE DEL 2° ARGUMENTO//
-}}
+//while(!isempty(aux)){
+    //insertar(&aux,p);//ERROR EN EL PASAJE DEL 2° ARGUMENTO//
+//}
+}
 
 void mostrar(inscripcion n){
 printf("\n EL NOMBRE Y APELLIDO ES: &s &s ",n.nombre,n.apellido);

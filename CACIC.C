@@ -11,6 +11,8 @@ int main ()
     pila p;
     init(&p);
 
+   int j= sizeof();
+   printf("%d", j);
     inscripcion x;
     strcpy(x.apellido, "perez");
     strcpy(x.nombre, "jose");
@@ -18,7 +20,8 @@ int main ()
     x.costo = 300;
     strcpy(x.universidad, "unsl");
     x.tipo_inscripcion = 1;
-    strcpy(x.confirmacion, "si");
+    x.confirmacion = 1;
+    //strcpy(x.confirmacion, "si");
 
     insertar(&p, x);
 
