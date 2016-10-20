@@ -11,8 +11,8 @@ int main ()
     pila p;
     init(&p);
 
-   int j= sizeof();
-   printf("%d", j);
+
+
     inscripcion x;
     strcpy(x.apellido, "perez");
     strcpy(x.nombre, "jose");
