@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #define max 100
 
 typedef struct{
@@ -63,9 +64,8 @@ n.confirmacion=0;
 }
 
 int busca_inscripto (pila p, int dni) {
-pila aux;
-while (!isempty(p) && copiar(p).dni!= dni){    //PREGUNTAR ME DEVUELVE UNA ESTRUCTURA, QUIERO SABER EL DNI//
- aux=p;
+pila aux=p;
+while (!isempty(aux) && copiar(aux).dni!= dni){    //PREGUNTAR ME DEVUELVE UNA ESTRUCTURA, QUIERO SABER EL DNI//
  suppress(&aux);
 }
 if (!isempty(p)){
@@ -105,7 +105,11 @@ case 1: n.costo=150;break;
 case 2: n.costo=150;break;
 case 3: n.costo=50;
 }
-
 }
-
+void calcula(pila P,inscripcion n){
+    int i; float resul=0.0;
+    for(i=0;i<P.tope;i++)
+        resul=resul+(n.costo);
+printf("\n EL DINERO TOTAL INGRESADO ES: %.2f",resul);
+}
 

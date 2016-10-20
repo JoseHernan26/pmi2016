@@ -3,37 +3,23 @@
 #include <string.h>
 #include "TDAInscripto.h"
 
-int main ()
+int main(){
+pila P;int i;
+system("COLOR 0F");
+for(i=0;i<80;i++)
+    printf("%c",42);
 
-{
-
-    int opmenu;
-    pila p;
-    init(&p);
-
-
-
-    inscripcion x;
-    strcpy(x.apellido, "perez");
-    strcpy(x.nombre, "jose");
-    x.dni = 3567990;
-    x.costo = 300;
-    strcpy(x.universidad, "unsl");
-    x.tipo_inscripcion = 1;
-    x.confirmacion = 1;
-    //strcpy(x.confirmacion, "si");
-
-    insertar(&p, x);
-
-    printf("\nApellido: %s\n", p.a[p.tope].apellido);
+printf("\n\n\t\t\t\t BIENVENIDO\n\t\t\t\t\n");
+for(i=0;i<80;i++)
+    printf("%c",42);
+    system("PAUSE");
+    system("CLS");
+system("COLOR 1F");
+printf("ACA IRIA EL MENU: ");
+scanf("%d",&P.tope);
+init(&P);
 
 
-//   do
-//       {
- //       printf ("llene la pila gil\n");
-//
-//        scanf("%d", &opmenu);
-//
-//       }while (opcmenu!=0)
-       return 0;
+return 0;
+
 }
