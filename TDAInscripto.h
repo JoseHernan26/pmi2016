@@ -63,17 +63,6 @@ do{scanf("%d",&n.tipo_inscripcion);
 n.confirmacion=0;
 }
 
-int busca_inscripto (pila p, int dni) {  // consultar estado
-    inscripcion n;
-while (!isempty(p)&& p.a[p.tope].dni!= dni)
-        suppress(p);
-    if (isempty(p)){
-        printf("EL DNI: %d NO SE ENCUENTRA INSCRIPTO \n", dni);
-        return 0;}
-    else
-        return 1; // falta controlar esto en el main
-}
-
 void mostrar(inscripcion n){
 printf("\n EL NOMBRE Y APELLIDO ES: &s &s ",n.nombre,n.apellido);
 printf("\n EL DNI ES: %d",n.dni);
@@ -99,7 +88,30 @@ switch(n.tipo_inscripcion){
 case 1: n.costo=150;break;
 case 2: n.costo=150;break;
 case 3: n.costo=50;
+}}
+
+int busca_inscripto (pila *p, int dni) {  // consultar estado
+    inscripcion n; int opcion;
+while (!isempty(p)&& (*p).a[(*p).tope].dni!= dni)
+        suppress(&p);
+    if (isempty(p)){
+        printf("EL DNI: %d NO SE ENCUENTRA INSCRIPTO \n", dni);
+        return 0;}
+    else{
+        n=copiar(p);
+        mostrar(n);
+        printf("\n ¿DESEA CONFIRMAR LA PREINSCRIPCION?.\n\t <1> CONFIRMAR\n <0> SALIR\n");
+            do{ scanf("%d",&opcion);
+                if(opcion<0||opcion>1)
+                    printf("\nERROR OPCION NO VALIDA REINGRESE: ");
+            }while(opcion<0||opcion>1);
+            if(opcion==1)
+            {
+                (*p).a[(*p).tope].confirmacion=1;
+            }
+         }                                                                                       // falta controlar esto en el main
 }
+<<<<<<< HEAD
 }
 int cantidad_inscriptos (pila p){
    int cont;
@@ -118,14 +130,17 @@ if (p.a[p.tope].confirmacion==1){
 
 }
 }
+=======
+>>>>>>> e0c6ac74aade9e27653a57b312fee1ec249abdde
 
 void calcula(pila P,inscripcion n){
     int i; float resul=0.0;
     for(i=0;i<P.tope;i++)
         resul=resul+(n.costo);
 printf("\n EL DINERO TOTAL INGRESADO ES: %.2f",resul);
+
 void imprimir (pila p){
-    FILE *fp2
+    FILE *fp2;
     fp2= fopen("inscriptos.txt", "r+");
     if (fp2= fopen("inscriptos.txt", "r+")==NULL){
         printf("Error: el archivo no se puede abrir\n");
