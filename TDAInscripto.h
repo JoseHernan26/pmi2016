@@ -63,24 +63,15 @@ do{scanf("%d",&n.tipo_inscripcion);
 n.confirmacion=0;
 }
 
-inscripcion busca_inscripto (pila p, int dni) {  // consultar estado
+int busca_inscripto (pila p, int dni) {  // consultar estado
     inscripcion n;
-
 while (!isempty(p)&& p.a[p.tope].dni!= dni)
-{
-
-
-    suppress(p);
-}
+{    suppress(p);}
     if (isempty(p)){
     printf("EL DNI: %d NO SE ENCUENTRA INSCRIPTO \n", dni);
-    }
+    return 0;}
     else
-        return p.a[p.tope]; // falta controlar esto en el main
-
-
-
-
+        return 1; // falta controlar esto en el main
 }
 
 void mostrar(inscripcion n){
