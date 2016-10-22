@@ -111,7 +111,7 @@ while (!isempty(p)&& (*p).a[(*p).tope].dni!= dni)
             }
          }                                                                                       // falta controlar esto en el main
 }
-<<<<<<< HEAD
+
 }
 int cantidad_inscriptos (pila p){
    int cont;
@@ -130,8 +130,6 @@ if (p.a[p.tope].confirmacion==1){
 
 }
 }
-=======
->>>>>>> e0c6ac74aade9e27653a57b312fee1ec249abdde
 
 void calcula(pila P,inscripcion n){
     int i; float resul=0.0;

@@ -41,7 +41,8 @@ switch (opc) {
                     printf("\n ERROR NUMERO NO VALIDO REINGRESE NUEVAMENTE: ");
             }while(nuevo.dni<11111111 || nuevo.dni>99999999);
                 busca_inscripto(p,nuevo.dni);
-
+    case 5:
+            imprimir (p)
 
 
 
