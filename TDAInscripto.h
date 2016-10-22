@@ -115,5 +115,26 @@ void calcula(pila P,inscripcion n){
     for(i=0;i<P.tope;i++)
         resul=resul+(n.costo);
 printf("\n EL DINERO TOTAL INGRESADO ES: %.2f",resul);
-}
+void imprimir (pila p){
+    FILE *fp2
+    fp2= fopen("inscriptos.txt", "r+");
+    if (fp2= fopen("inscriptos.txt", "r+")==NULL){
+        printf("Error: el archivo no se puede abrir\n");
+        exit(1);
+    }
 
+    while (!isempty(p)){
+    if (p.a[p.tope].confirmacion=1)
+    {
+        fprintf(fp2, "|%s|\n |%s|\n |%d|\n |%s|\n ", p.a[p.tope].apellido, p.a[p.tope].nombre, p.a[p.tope].dni, p.a[p.tope].universidad );
+        switch(p.a[p.tope].tipo_inscripcion){
+case 1: fprintf(fp2,"\n EL INSCRIPTO ES ASISTENTE.");break;
+case 2: fprintf(fp2,"\n EL INSCRIPTO ES EXPOSITOR.");break;
+case 3: fprintf(fp2,"\n EL INSCRIPTO ES ESTUDIANTE.");break;
+    }
+    suppress(&p);
+    }
+
+}
+fclose(fp2);
+}
