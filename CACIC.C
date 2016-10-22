@@ -27,7 +27,7 @@ for(i=0;i<80;i++)
     fscanf(fp1, "%s %s %d %s %d %d ", nuevo.apellido, nuevo.nombre, p.a[p.tope].dni, nuevo.universidad, nuevo.tipo_inscripcion, nuevo.confirmacion)
     insertar(&p, nuevo);
     }
-    printf("INGRESE UNA OPCION: <1> AGREGAR UN INSCRIPTO\n <2> BUSCAR INSCRIPTO POR DNI\n <3> MOSTRAR DATOS DE INSCRIPTO\n <4> CONFIRMAR INSCRIPCION\n <5> ")
+    printf("INGRESE UNA OPCION: <1> AGREGAR UN INSCRIPTO\n <2> BUSCAR INSCRIPTO POR DNI\n <3> MOSTRAR DATOS DE PREINSCRIPTO\n <4> MOSTRAR CANTIDAD DE DINERO \n <5> IMPRIMIR LOS INSCRIPTOS EN UN ARCHIVO\n ");
 switch (opc) {
     case 1 : if (isfull(p))
                 printf("\nERROR La pila esta llena\n");
@@ -40,7 +40,9 @@ switch (opc) {
                 if(nuevo.dni<11111111 || nuevo.dni>99999999)
                     printf("\n ERROR NUMERO NO VALIDO REINGRESE NUEVAMENTE: ");
             }while(nuevo.dni<11111111 || nuevo.dni>99999999);
-                busca_inscripto(p,nuevo.dni);
+                busca_inscripto(p,nuevo.dni);break;
+    case 3: cantidad_inscriptos(p);
+    case 4 : calcula(p);
 
 
 

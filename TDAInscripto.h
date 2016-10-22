@@ -90,34 +90,36 @@ case 2: n.costo=150;break;
 case 3: n.costo=50;
 }}
 
-int busca_inscripto (pila *p, int dni) {  // consultar estado
+void busca_inscripto (pila p, int dni) {  // consultar estado
     inscripcion n; int opcion;
-while (!isempty(p)&& (*p).a[(*p).tope].dni!= dni)
+while (!isempty(p)&& p.a[p.tope].dni!= dni)
         suppress(&p);
     if (isempty(p)){
         printf("EL DNI: %d NO SE ENCUENTRA INSCRIPTO \n", dni);
-        return 0;}
+        exit(1);}
     else{
         n=copiar(p);
-        mostrar(n);
-        printf("\n ¿DESEA CONFIRMAR LA PREINSCRIPCION?.\n\t <1> CONFIRMAR\n <0> SALIR\n");
-            do{ scanf("%d",&opcion);
-                if(opcion<0||opcion>1)
-                    printf("\nERROR OPCION NO VALIDA REINGRESE: ");
-            }while(opcion<0||opcion>1);
-            if(opcion==1)
-            {
-                (*p).a[(*p).tope].confirmacion=1;
+        printf("\n ¿DESEA CONFIRMAR LA PREINSCRIPCION?.\n\t <1> CONFIRMAR\n <2> MOSTRAR INSCRIPTO\n <0> SALIR\n");//controlar switch para volver al menu//
+            do{scanf("%d",&opcion);getchar();
+                if(opcion<0||opcion>2)
+                    printf("\n LA OPCION QUE INGRESO ES INVALIDA BUEVA A INGRESAR : ");
+            }while(opcion<0||opcion>2);
+            switch (opcion){
+            case 1: p.a[p.tope].confirmacion=1;break;
+            case 2:mostrar(n);break;
+
             }
+
+
          }                                                                                       // falta controlar esto en el main
 }
-<<<<<<< HEAD
-}
+
+
 int cantidad_inscriptos (pila p){
    int cont;
    inscripcion n;
 while (!isempty(p)){
-if (p.a[p.tope].confirmacion==1){
+if (p.a[p.tope].confirmacion!=1){
         n=p.a[p.tope];
         cont++;
        mostrar(n)
@@ -130,10 +132,9 @@ if (p.a[p.tope].confirmacion==1){
 
 }
 }
-=======
->>>>>>> e0c6ac74aade9e27653a57b312fee1ec249abdde
 
-void calcula(pila P,inscripcion n){
+
+void calcula(pila P){
     int i; float resul=0.0;
     for(i=0;i<P.tope;i++)
         resul=resul+(n.costo);
