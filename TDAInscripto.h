@@ -101,6 +101,24 @@ case 2: n.costo=150;break;
 case 3: n.costo=50;
 }
 }
+int cantidad_inscriptos (pila p){
+   int cont;
+   inscripcion n;
+while (!isempty(p)){
+if (p.a[p.tope].confirmacion==1){
+        n=p.a[p.tope];
+        cont++;
+       mostrar(n)
+}
+ suppress(&p);
+
+}
+    if (cont==0){
+        printf("No hay ningun confirmado \n");
+
+}
+}
+
 void calcula(pila P,inscripcion n){
     int i; float resul=0.0;
     for(i=0;i<P.tope;i++)

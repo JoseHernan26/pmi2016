@@ -29,7 +29,7 @@ for(i=0;i<80;i++)
     }
     printf("INGRESE UNA OPCION: <1> AGREGAR UN INSCRIPTO\n <2> BUSCAR INSCRIPTO POR DNI\n <3> MOSTRAR DATOS DE INSCRIPTO\n <4> CONFIRMAR INSCRIPCION\n <5> ")
 switch (opc) {
-    case 1 : if (!isfull(p))
+    case 1 : if (isfull(p))
                 printf("\nERROR La pila esta llena\n");
                 else{
                 cargar_nuevo(nuevo);
