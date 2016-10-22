@@ -20,6 +20,7 @@ scanf("%d",&P.tope);
 init(&P);
 
 
+
 return 0;
 
 }
