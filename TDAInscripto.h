@@ -114,7 +114,11 @@ while (!isempty(p)&& p.a[p.tope].dni!= dni)
          }                                                                                       // falta controlar esto en el main
 }
 
+<<<<<<< HEAD
 
+=======
+}
+>>>>>>> 252b995aeb2d53eb9b4f1b2b3a5b6f1b88aefcee
 int cantidad_inscriptos (pila p){
    int cont;
    inscripcion n;
