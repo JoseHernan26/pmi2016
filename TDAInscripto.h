@@ -66,10 +66,10 @@ n.confirmacion=0;
 int busca_inscripto (pila p, int dni) {  // consultar estado
     inscripcion n;
 while (!isempty(p)&& p.a[p.tope].dni!= dni)
-{    suppress(p);}
+        suppress(p);
     if (isempty(p)){
-    printf("EL DNI: %d NO SE ENCUENTRA INSCRIPTO \n", dni);
-    return 0;}
+        printf("EL DNI: %d NO SE ENCUENTRA INSCRIPTO \n", dni);
+        return 0;}
     else
         return 1; // falta controlar esto en el main
 }

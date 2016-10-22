@@ -40,10 +40,10 @@ switch (opc) {
                 if(nuevo.dni<11111111 || nuevo.dni>99999999)
                     printf("\n ERROR NUMERO NO VALIDO REINGRESE NUEVAMENTE: ");
             }while(nuevo.dni<11111111 || nuevo.dni>99999999);
-            if(!isempty(p))
-                nuevo=busca_inscripto(p,nuevo.dni);
+            if(busca_inscripto(p,nuevo.dni))
+                     mostrar(nuevo)
+            else
 
-                mostrar(nuevo);
 
 
             }
