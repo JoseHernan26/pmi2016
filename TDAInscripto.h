@@ -20,7 +20,7 @@ typedef struct{
 void init (pila *p){
     p->tope=-1;
 }
-void insertar(pila *p,inscripcion nuevo)
+void insertar(pila *p,inscripcion nuevo) //inscribir campo a campo
 {
      ((*p).tope)++;
     (*p).a[(*p).tope]=nuevo;
@@ -63,20 +63,24 @@ do{scanf("%d",&n.tipo_inscripcion);
 n.confirmacion=0;
 }
 
-int busca_inscripto (pila p, int dni) {
-pila aux=p;
-while (!isempty(aux) && copiar(aux).dni!= dni){    //PREGUNTAR ME DEVUELVE UNA ESTRUCTURA, QUIERO SABER EL DNI//
- suppress(&aux);
+inscripcion busca_inscripto (pila p, int dni) {  // consultar estado
+    inscripcion n;
+
+while (!isempty(p)&& p.a[p.tope].dni!= dni)
+{
+
+
+    suppress(p);
 }
-if (!isempty(p)){
-printf("EL DNI: %d SE ENCUENTRA INSCRIPTO \n", dni);
-return 1;}
-else{
-printf("EL DNI: %d NO ESTA INSCRIPTO\n",dni );
-return 0;}
-//while(!isempty(aux)){
-    //insertar(&aux,p);//ERROR EN EL PASAJE DEL 2° ARGUMENTO//
-//}
+    if (isempty(p)){
+    printf("EL DNI: %d NO SE ENCUENTRA INSCRIPTO \n", dni);
+    }
+    else
+        return p.a[p.tope]; // falta controlar esto en el main
+
+
+
+
 }
 
 void mostrar(inscripcion n){
